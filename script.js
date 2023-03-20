@@ -6,7 +6,7 @@ document.querySelector("h1").onmouseover = event => {
    const interval = setInterval(() => {
     event.target.innerText = event.target.innerText.split("")
     .map((letter, index) => {
-        if(index < 1) {
+        if(index < iterations) {
             return event.target.dataset.value[index];
         }
     

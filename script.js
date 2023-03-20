@@ -5,7 +5,13 @@ document.querySelector("h1").onmouseover = event => {
 
    const interval = setInterval(() => {
     event.target.innerText = event.target.innerText.split("")
-    .map(letter => letters[Math.floor(Math.random() * 26)])
+    .map((letter, index) => {
+        if(index < 1) {
+            return event.target.dataset.value[index];
+        }
+    
+    return letters[Math.floor(Math.random() * 26)]
+    })
     .join('');
     if(iterations >= 9) clearInterval(interval);
     iterations += 1;
